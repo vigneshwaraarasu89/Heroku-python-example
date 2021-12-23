@@ -1,1 +1,1 @@
-web: gunicorn bookdetails:app --log-file - 
+web: gunicorn scrape:app --log-file - 
