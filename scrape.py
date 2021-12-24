@@ -8,6 +8,7 @@ import requests
 from flask import request
 from flask import Flask
 import re
+import sys
 import lxml
 from lxml.html.clean import Cleaner
 from lxml.html import document_fromstring
@@ -24,7 +25,6 @@ cleaner.style = True
 @app.route('/')
 def url_scrape():
     try:
-        print('successefully entered scrape request')
         response={}
         url = request.args.get('url')
         page = requests.get(url)
@@ -48,6 +48,6 @@ def url_scrape():
         return response
         
     except:
-        return "Error in request"
+        return sys.exc_info()[0]
 
 app.run(debug = False)
