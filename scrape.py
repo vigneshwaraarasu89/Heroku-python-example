@@ -50,4 +50,5 @@ def url_scrape():
     except:
         return sys.exc_info()[0]
 
-app.run(debug = False)
+if __name__ == '__main__':
+    app.run(debug = False)
