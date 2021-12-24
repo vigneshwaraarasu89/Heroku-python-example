@@ -1,1 +1,1 @@
-web: gunicorn --bind 0.0.0.0:$PORT scrape:app 
+web: gunicorn scrape:app --log-file=-
